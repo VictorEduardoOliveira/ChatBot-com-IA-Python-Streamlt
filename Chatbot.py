@@ -42,7 +42,7 @@ if mensagem:
     )
     print(resposta_ia)
     
-    texto_resposta_ia = resposta_ia
+    texto_resposta_ia = resposta_ia.choices[0].message.content
 
     st.chat_message("assistant").write(texto_resposta_ia)
     mensagem_ia = {"role": "assistant", "content": texto_resposta_ia}
