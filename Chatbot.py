@@ -10,8 +10,12 @@
 
 import streamlit as st
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
-modelo_ia = OpenAI(api_key="Sua_Chave")
+load_dotenv() # lê o arquivo .env e carrega as variáveis nele
+
+modelo_ia = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) # pega a chave sem expor no código
 
 
 st.write("## ChatBot com IA") # markdown
